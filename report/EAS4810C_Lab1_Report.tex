@@ -1,0 +1,96 @@
+\documentclass[journal,letterpaper]{IEEEtran}
+\usepackage[letterpaper, left=0.65in, right=0.65in, bottom=0.7in, top=0.7in]{geometry}
+\usepackage{stix}
+\usepackage{siunitx}
+\usepackage{tabularray}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage[none]{hyphenat}
+\usepackage[hidelinks]{hyperref}
+\usepackage{import}
+\usepackage{transparent}
+%\usepackage{microtype}
+
+\graphicspath{ {./figures/} }
+
+\newcommand{\incfig}[1]{%
+    \centering
+    \def\svgwidth{3.5in}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\sisetup{per-mode = symbol, inter-unit-product = \ensuremath{ { } \cdot { } }}
+
+\bibliographystyle{IEEEtran}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\thepage}
+\lhead{Section 11832 Lab 1}
+
+\setlength{\columnsep}{0.2in}
+\setlength{\columnwidth}{3.5in}
+
+\begin{document}
+\title{Characterizing the Viscous Loss of a Wind Tunnel}
+
+\author{\IEEEauthorblockN{\huge{Last Name, First Name \\}}
+\IEEEauthorblockA{
+Section 11832 \quad September 19, 2023}
+}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+Abstract
+\end{abstract}
+
+\begin{IEEEkeywords}
+calibration, flow velocity, viscous loss, wind tunnel
+\end{IEEEkeywords}
+
+
+\section{Introduction}
+
+
+\IEEEPARstart{W}{ind} tunnels have proven to be a valuable tool for predicting the aerodynamic capabilities of objects for over a century \cite{lecture}.
+Air is moved through the tunnel and the interactions between the airflow and the object can be used to simulate the actual flight characteristics of the object.
+As the velocity of the flowing air can be a major influence on the performance of the object in the wind tunnel, it is vital to have an accurate understanding of the velocity of the air flow.
+This can be complicated by the presence of viscous losses and the flow conditioning screens which affect the kinetic energy of the fluid.
+The use of a pitot tube to measure the air velocity would be the simplest choice, but the physical presence of a model in the wind tunnel would disrupt the flow to the pitot tube and cause inaccurate readings.
+This lab determined a tunnel calibration coefficient, $K$, that accounts for the viscous losses and heat transfer losses in the wind tunnel.
+This was accomplished by measuring the pressure gradient across multiple fan speeds and using the first law of thermodynamics to establish a relationship between the dynamic pressure and the static pressure accounting for losses.
+With the correction factor, measurements of the static pressure at the entrance of the test section can be used to determine the flow velocity.
+
+
+\section{Procedure}
+
+
+Procedure
+
+
+\section{Discussion}
+
+
+Discussion
+
+
+\section{Conclusion}
+
+
+Conclusion
+
+
+\section*{Appendix A: Uncertainty Calculation}
+
+
+Uncertainty
+
+
+\bibliography{Lab1_refs}
+
+\end{document}
