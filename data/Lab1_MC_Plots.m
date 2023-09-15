@@ -176,6 +176,10 @@ q =   [-0.033754
         3.356923
         3.753616];
 
+% Convert to Pa
+dP = dP * 249.0889;
+q = q * 249.0889;
+    
 coeff = polyfit(dP,q,1);
 trend = polyval(coeff,dP);
     
@@ -184,8 +188,52 @@ c = '#A6A6A6';
 hold on;
 plot(dP,q,'k.','MarkerSize',20);
 plot(dP,trend,'Color',c,'LineWidth',2.5);
-xlabel('dP')
-ylabel('q')
+xlabel('$P_{amb} - P_{ts}$ (Pa)')
+ylabel('$q_{ts}$ (Pa)')
+grid on;
+box off;
+set(gca,'fontname','times');
+
+%% Plot transducer calibration curve
+
+clc; clear; close all;
+
+Pman = [-3.4
+        -1.3
+        -3.6
+        -2.1
+        -3.5
+         3.0
+         3.6
+         4.0
+         3.6
+         2.4];
+
+Pind = [-3.405
+        -1.460
+        -3.613
+        -2.217
+        -3.512
+         3.002
+         3.586
+         3.922
+         3.667
+         2.370];
+
+% Convert to Pa
+Pman = Pman * 249.0889;
+Pind = Pind * 249.0889;
+    
+coeff = polyfit(Pman,Pind,1);
+trend = polyval(coeff,Pman);
+    
+figure;
+c = '#A6A6A6';
+hold on;
+plot(Pman,Pind,'k.','MarkerSize',20);
+plot(Pman,trend,'Color',c,'LineWidth',2.5);
+xlabel('$P_{man}$ (Pa)')
+ylabel('$P_{ind}$ (Pa)')
 grid on;
 box off;
 set(gca,'fontname','times');
