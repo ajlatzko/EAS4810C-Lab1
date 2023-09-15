@@ -11,7 +11,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{import}
 \usepackage{transparent}
-%\usepackage{microtype}
+\usepackage{microtype}
 
 \graphicspath{ {./figures/} }
 
@@ -35,7 +35,7 @@
 \setlength{\columnwidth}{3.5in}
 
 \begin{document}
-\title{Characterizing the Viscous Loss of a Wind Tunnel}
+\title{Title}
 
 \author{\IEEEauthorblockN{\huge{Last Name, First Name \\}}
 \IEEEauthorblockA{
@@ -57,20 +57,71 @@ calibration, flow velocity, viscous loss, wind tunnel
 \section{Introduction}
 
 
-\IEEEPARstart{W}{ind} tunnels have proven to be a valuable tool for predicting the aerodynamic capabilities of objects for over a century \cite{lecture}.
-Air is moved through the tunnel and the interactions between the airflow and the object can be used to simulate the actual flight characteristics of the object.
-As the velocity of the flowing air can be a major influence on the performance of the object in the wind tunnel, it is vital to have an accurate understanding of the velocity of the air flow.
-This can be complicated by the presence of viscous losses and the flow conditioning screens which affect the kinetic energy of the fluid.
+\IEEEPARstart{W}{ind} tunnels have proven to be a valuable tool for predicting the aerodynamic capabilities of objects for over a century [lecture].
+Air is moved through the tunnel and the interactions between the airflow and the object can be used to simulate the actual characteristics of the object in flight.
+As the velocity of the flowing air can be a major influence on the aerodynamics of the object in the wind tunnel, it is vital to have an accurate understanding of the velocity of the airflow.
+This can be complicated by the presence of viscous losses and the use of flow conditioning screens which affect the kinetic energy of the fluid.
 The use of a pitot tube to measure the air velocity would be the simplest choice, but the physical presence of a model in the wind tunnel would disrupt the flow to the pitot tube and cause inaccurate readings.
-This lab determined a tunnel calibration coefficient, $K$, that accounts for the viscous losses and heat transfer losses in the wind tunnel.
-This was accomplished by measuring the pressure gradient across multiple fan speeds and using the first law of thermodynamics to establish a relationship between the dynamic pressure and the static pressure accounting for losses.
-With the correction factor, measurements of the static pressure at the entrance of the test section can be used to determine the flow velocity.
+This lab determined a tunnel calibration coefficient, $K$, that accounts for the viscous losses in the wind tunnel.
 
+Using the first law of thermodynamics, a relationship between the dynamic pressure and the static pressure can be established, where $q$ is the dynamic pressure, $\Delta P$ is the change in static pressure, $\rho$ is the fluid density, $\dot{Q}_{net,in}$ is the net heat transfer rate, $\dot{m}$ is the mass rate of change, and $\Delta u$ is the change in fluid velocity (eq).
+\begin{equation} \label{eq:firstLaw}
+    q = \Delta P + \frac{\rho \dot{Q}_{net,in}}{\dot{m}} + \rho\Delta u
+\end{equation}
+The last two terms, which represent the heat transfer and frictional losses respectively, can be assumed to be proportional to the dynamic pressure by a tunnel calibration coefficient, $K$ (eq) [lecture].
+\begin{equation} \label{eq:calCoeff}
+    q = \Delta P + Kq
+\end{equation}
+After rearranging eq. X, a linear relationship between the dynamic pressure in the test section and the change in the static pressure can be established (eq), where $m$ is just an arbitrary constant.
+\begin{equation} \label{eq:stat2dynP}
+    q = \frac{1}{1 - K}\Delta P = m\Delta P
+\end{equation}
+With this relationship in mind, a calibrated pressure transducer was used to record the dynamic pressure and change in static pressure at various fan speeds.
+After a linear equation was fitted for the experimental data, the slope of the best-fit line was used to obtain the tunnel calibration coefficient, $K$.
+With the tunnel calibration coefficient, the velocity of the fluid could be determined even with the presence of an object in the wind tunnel by knowing the density of the fluid and equating the definition of the dynamic pressure and the linear relationship between pressures accounting for viscous losses (eq).
+\begin{equation} \label{eq:dynDef}
+    q = \frac{\rho V_\text{flow}}{2} = \frac{1}{1 - K}\Delta P
+\end{equation}
+\begin{equation} \label{eq:vflow}
+    V_\text{flow} = \sqrt{\frac{2\Delta P}{\rho(1 - K)}}
+\end{equation}
 
 \section{Procedure}
 
+\subsection{Calibrating the Pressure Transducer}
 
-Procedure
+Before proceeding with the calibration, the pressure transducer was allowed to stabilize itself to a zero setting.
+After a zero setting was ensured, the heights between the columns of the water manometer were checked for equal height.
+For positive gauge pressures, a barbed fitting was attached to a valved tee on one leg of the manometer, which was then connected to the port marked “TOTAL” on the pressure transducer. 
+The other port of the pressure transducer, marked “STATIC”, was exposed to the ambient environment.
+
+The pressure selector was set to zero position and the pressure display was set to 0.0000 using the “Zero” potentiometer.
+The valved tee was then opened, and a pressure near the maximum differential pressure of 6 inH2O was then applied to the manometer by pumping the rubber bulb.
+Once the manometer neared the maximum differential pressure, the valved tee was closed.
+The differential pressure on the manometer was obtained by recording the difference in the heights of the columns of water.
+This difference in height was matched to the pressure transducer's display of the differential pressure by adjusting the “SPAN” potentiometer until an identical differential pressure was displayed.
+The valve was then opened.
+Once the manometer was level, the “ZERO” setting was adjusted in the case of the final pressure not being sufficiently close to 0.
+This process was repeated starting with setting the zero position and ending with final adjustments to the “ZERO” setting.
+Once no final adjustments were needed, the potentiometer settings were locked. 
+
+To verify the full range of pressures, the pressure transducer was additionally calibrated to negative gauge pressures using the same process described before but with the configuration of the STATIC and TOTAL ports reversed.
+To record potential uncertainties, after each calibration, various pressures were measured.
+The difference in pressure readings was taken for five pressure measurements between the manometer and the pressure transducer in the positive range and five pressure readings in the negative range.
+
+\subsection{Testing for the Calibration Coefficient}
+
+Procedure 2
+
+\subsection{Forming the Velocity Profile}
+
+Procedure 3
+
+
+\section{Results}
+
+
+Results
 
 
 \section{Discussion}
