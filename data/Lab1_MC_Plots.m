@@ -237,3 +237,28 @@ ylabel('$P_{ind}$ (Pa)')
 grid on;
 box off;
 set(gca,'fontname','times');
+
+%% Plot velocity profile
+
+clc; clear; close all;
+
+pos = [1.5 3 4.5 6 7.5 9 10.5];
+
+front = [20.09649115	22.01206383	22.01197829	21.96238566	21.99520315	22.05322900	22.06480624];
+
+back = [16.31081300	22.32169196	22.29623036	22.30278936	22.35630252	22.42566381	22.63432919];
+
+% Correct position
+pos = pos - 1.5;
+
+figure;
+hold on;
+plot(front,pos,'r.','MarkerSize',20);
+plot(back,pos,'b.','MarkerSize',20);
+ylim([0 10])
+legend({'Front', 'Back'},'Location','northwest');
+xlabel('Flow Speed (m/s)')
+ylabel('Pitot Tube Position (in)')
+grid on;
+box off;
+set(gca,'fontname','times');
