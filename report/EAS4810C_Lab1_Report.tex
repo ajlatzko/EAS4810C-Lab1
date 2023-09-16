@@ -2,7 +2,10 @@
 \usepackage[letterpaper, left=0.65in, right=0.65in, bottom=0.7in, top=0.7in]{geometry}
 \usepackage{stix}
 \usepackage{siunitx}
-\usepackage{tabularray}
+\usepackage[version=4]{mhchem}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
@@ -35,9 +38,9 @@
 \setlength{\columnwidth}{3.5in}
 
 \begin{document}
-\title{Title}
+\title{Determining a Wind Tunnel Calibration Coefficient to Predict the Fluid Velocity and Velocity Profile}
 
-\author{\IEEEauthorblockN{\huge{Last Name, First Name \\}}
+\author{\IEEEauthorblockN{\huge{Borg, Auston J. \\ Lam, Brandon H. \\ Latzko, Alexander J. \\}}
 \IEEEauthorblockA{
 Section 11832 \quad September 19, 2023}
 }
@@ -57,12 +60,11 @@ calibration, flow velocity, viscous loss, wind tunnel
 \section{Introduction}
 
 
-\IEEEPARstart{W}{ind} tunnels have proven to be a valuable tool for predicting the aerodynamic capabilities of objects for over a century [lecture].
+\IEEEPARstart{W}{ind} tunnels have proven to be a valuable tool for predicting the aerodynamic capabilities of objects for over a century~\cite{lecture}.
 Air is moved through the tunnel and the interactions between the airflow and the object can be used to simulate the actual characteristics of the object in flight.
 As the velocity of the flowing air can be a major influence on the aerodynamics of the object in the wind tunnel, it is vital to have an accurate understanding of the velocity of the airflow.
 This can be complicated by the presence of viscous losses and the use of flow conditioning screens which affect the kinetic energy of the fluid.
 The use of a pitot tube to measure the air velocity would be the simplest choice, but the physical presence of a model in the wind tunnel would disrupt the flow to the pitot tube and cause inaccurate readings.
-This lab determined a tunnel calibration coefficient, $K$, that accounts for the viscous losses in the wind tunnel.
 
 Using the first law of thermodynamics, a relationship between the dynamic pressure and the static pressure can be established, where $q$ is the dynamic pressure, $\Delta P$ is the change in static pressure, $\rho$ is the fluid density, $\dot{Q}_{net,in}$ is the net heat transfer rate, $\dot{m}$ is the mass rate of change, and $\Delta u$ is the change in fluid velocity (eq).
 \begin{equation} \label{eq:firstLaw}
@@ -127,7 +129,71 @@ Results
 \section{Discussion}
 
 
-Discussion
+\begin{table}[H]
+    \centering
+    \caption{Pressure Transducer Calibration}
+    \begin{tabular}{cccc}
+    \toprule
+    $P_\text{man}$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $P_\text{man}$ (\unit{in\ce{H_2O}})} & $P_\text{ind}$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $P_\text{ind}$ (\unit{in\ce{H_2O}})} \\ \midrule \midrule
+    -3.40 & 0.05 & -3.405 & 0.017 \\
+    -1.35 & 0.05 & -1.460 & 0.007 \\
+    -3.60 & 0.05 & -3.613 & 0.018 \\
+    -2.10 & 0.05 & -2.217 & 0.011 \\
+    -3.55 & 0.05 & -3.512 & 0.018 \\
+    3.05  & 0.05 & 3.002  & 0.015 \\
+    3.60  & 0.05 & 3.586  & 0.018 \\
+    4.05  & 0.05 & 3.922  & 0.020 \\
+    3.65  & 0.05 & 3.667  & 0.018 \\
+    2.40  & 0.05 & 2.370  & 0.012 \\ \bottomrule
+    \end{tabular}
+    \label{tab:PCalib}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Monte-Carlo Data Points}
+    \begin{tabular}{cccc}
+    \toprule
+    $\Delta P$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $\Delta P$ (\unit{in\ce{H_2O}})} & $q$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $q$ (\unit{in\ce{H_2O}})} \\ \midrule \midrule
+    0.013 & 0.002 & -0.034 & 0.002 \\
+    0.091 & 0.002 & -0.005 & 0.002 \\
+    0.202 & 0.002 & 0.041  & 0.002 \\
+    0.339 & 0.002 & 0.107  & 0.002 \\
+    0.509 & 0.002 & 0.193  & 0.002 \\
+    0.708 & 0.002 & 0.301  & 0.002 \\
+    0.938 & 0.002 & 0.428  & 0.003 \\
+    1.197 & 0.002 & 0.579  & 0.002 \\
+    1.493 & 0.002 & 0.752  & 0.002 \\
+    1.816 & 0.002 & 0.947  & 0.002 \\
+    2.172 & 0.002 & 1.170  & 0.002 \\
+    2.563 & 0.002 & 1.412  & 0.002 \\
+    2.984 & 0.002 & 1.682  & 0.002 \\
+    3.436 & 0.002 & 1.972  & 0.002 \\
+    3.913 & 0.002 & 2.286  & 0.002 \\
+    4.417 & 0.002 & 2.620  & 0.002 \\
+    4.951 & 0.002 & 2.981  & 0.002 \\
+    5.506 & 0.002 & 3.357  & 0.002 \\ \bottomrule
+    \end{tabular}
+    \label{tab:MCPoints}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Velocity Profile}
+    \begin{tabular}{ccccc}
+    \toprule
+    \multirowcell{3}{Vertical Position of Pitot \\ Tube in Test Section (\unit{in})} & \multicolumn{2}{c}{\makecell{Front of Test \\ Section}} & \multicolumn{2}{c}{\makecell{Back of Test \\ Section}} \\ \cmidrule(l){2-5} 
+    & \makecell{$V_\text{front}$ \\ (\unit{\m\per\s})} & \makecell{$\mu V_\text{front}$ \\ (\unit{\m\per\s})} & \makecell{$V_\text{back}$ \\ (\unit{\m\per\s})} & \makecell{$\mu V_\text{back}$ \\ (\unit{\m\per\s})} \\ \midrule \midrule
+    0.0 & 20.10 & 0.04 & 16.31 & 0.04 \\
+    1.5 & 22.01 & 0.04 & 22.32 & 0.04 \\
+    3.0 & 22.01 & 0.04 & 22.30 & 0.04 \\
+    4.5 & 21.96 & 0.04 & 22.30 & 0.04 \\
+    6.0 & 22.00 & 0.04 & 22.36 & 0.04 \\
+    7.5 & 22.05 & 0.04 & 22.43 & 0.04 \\
+    9.0 & 22.06 & 0.04 & 22.63 & 0.04 \\ \bottomrule
+    \end{tabular}
+    \label{tab:VProfile}
+\end{table}
 
 
 \section{Conclusion}
@@ -139,15 +205,35 @@ Conclusion
 \section*{Appendix A: Uncertainty Calculation}
 
 
-Uncertainty
+\begin{table}[H]
+    \centering
+    \caption{Summary of Measurement Uncertainties}
+    \begin{tabular}{cccc}
+    \toprule
+    Parameter & Symbol & Justification & Uncertainty \\ \midrule \midrule
+    \makecell{Transducer \\ Calibration} & $\mu P_\text{ind}$ & Manual & 0.5\% $P_\text{ind}$ \\
+    \makecell{Manometer \\ Reading} & $\mu P_\text{man}$ & \makecell{Half of \\ interval} & \qty{0.05}{in\ce{H_2O}} \\
+    Temperature & $\mu T$ & Digital & \qty{0.1}{\celsius} \\
+    Humidity & $\mu \varphi$ & Digital & 1\% \\
+    Ambient Pressure & $\mu P_\text{amb}$ & Barometer & \qty{0.02}{\mm} \\
+    Dynamic Pressure & $\mu q$ & \makecell{95\% Conf. \\ Int.} & \makecell{Variable, \\ $\sim \qty{0.002}{in\ce{H_2O}}$} \\
+    \makecell{Static Pressure \\ Difference} & $\mu \Delta P$ & \makecell{95\% Conf. \\ Int.} & \makecell{Variable, \\ $\sim \qty{0.002}{in\ce{H_2O}}$} \\
+    \makecell{Tunnel Calibration \\ Slope} & $\mu m$ & Monte Carlo & 0.0006 \\
+    \makecell{Tunnel Calibration \\ Coefficient} & $\mu K$ & RSS & 0.002 \\
+    \makecell{Saturation \\ Pressure} & $\mu P_g$ & RSS & \qty{16}{\pascal} \\
+    Density & $\mu \rho$ & RSS & \qty{0.004}{\kg\per\m\cubed} \\
+    Flow Velocity & $\mu V_\text{flow}$ & RSS & Variable, $\sim \qty{0.04}{\m\per\s}$ \\ \bottomrule
+    \end{tabular}
+    \label{tab:uncertainty}
+\end{table}
 
 
 \begin{thebibliography}{9}
-    \bibitem{b1} G. O. Young, ``Synthetic structure of industrial plastics (Book style with paper title and editor),'' in \textit{Plastics}, 2nd ed. vol. 3, J. Peters, Ed. New York: McGraw-Hill, 1964, pp. 15--64.
-    \bibitem{b2} W.-K. Chen, \textit{Linear Networks and Systems} (Book style).	Belmont, CA: Wadsworth, 1993, pp. 123--135.
-    \bibitem{b3} H. Poor, \textit{An Introduction to Signal Detection and Estimation}. New York: Springer-Verlag, 1985, ch. 4.
-    \bibitem{b4} B. Smith, ``An approach to graphs of linear forms (Unpublished work style),'' unpublished.
-    \bibitem{b5} E. H. Miller, ``A note on reflector arrays (Periodical style—Accepted for publication),'' \textit{IEEE Trans. Antennas Propagat.}, to be published.
+    \bibitem{lecture} Abbitt, J. D., ``Wind Tunnel Operating Characteristics
+    Wind tunnel Calibration,'' \textit{University of Florida E-Learning} [PowerPoint slides], URL: \url{https://ufl.instructure.com/courses/480244/files/80557995}, 2023.
+    \bibitem{MoMLecture} Ridgeway, S., ``MOM\_lab Uncertainty basics w tension,'' \textit{University of Florida E-Learning} [PowerPoint slides], URL: \url{https://ufl.instructure.com/courses/447927/files/65674680}, 2022.
+    \bibitem{calculator} Abbitt, J. D., and Ukeiley, L. S., ``Air density calculator.xlsx,'' \textit{University of Florida E-Learning} [Excel spreadsheet], URL: \url{https://ufl.instructure.com/courses/480244/files/77543966}, 2023.
+    \bibitem{inH2OtoPa} Thompson, A., and Taylor, B. N, ``Appendix B. Conversion Factors,'' \textit{Guide for the Use of the International System of Units (SI)}, National Institute of Standards and Technology, Maryland, 2008, p. 50.
 \end{thebibliography}
 
 \end{document}
