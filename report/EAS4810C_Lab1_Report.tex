@@ -66,21 +66,21 @@ As the velocity of the flowing air can be a major influence on the aerodynamics 
 This can be complicated by the presence of viscous losses and the use of flow conditioning screens which affect the kinetic energy of the fluid.
 The use of a pitot tube to measure the air velocity would be the simplest choice, but the physical presence of a model in the wind tunnel would disrupt the flow to the pitot tube and cause inaccurate readings.
 
-Using the first law of thermodynamics, a relationship between the dynamic pressure and the static pressure can be established, where $q$ is the dynamic pressure, $\Delta P$ is the change in static pressure, $\rho$ is the fluid density, $\dot{Q}_{net,in}$ is the net heat transfer rate, $\dot{m}$ is the mass rate of change, and $\Delta u$ is the change in fluid velocity (eq).
+Using the first law of thermodynamics, a relationship between the dynamic pressure and the static pressure can be established, where $q$ is the dynamic pressure, $\Delta P$ is the change in static pressure, $\rho$ is the fluid density, $\dot{Q}_{net,in}$ is the net heat transfer rate, $\dot{m}$ is the mass rate of change, and $\Delta u$ is the change in fluid velocity~\eqref{eq:firstLaw}.
 \begin{equation} \label{eq:firstLaw}
     q = \Delta P + \frac{\rho \dot{Q}_{net,in}}{\dot{m}} + \rho\Delta u
 \end{equation}
-The last two terms, which represent the heat transfer and frictional losses respectively, can be assumed to be proportional to the dynamic pressure by a tunnel calibration coefficient, $K$ (eq) [lecture].
+The last two terms, which represent the heat transfer and frictional losses respectively, can be assumed to be proportional to the dynamic pressure by a tunnel calibration coefficient, $K$~\eqref{eq:calCoeff}~\cite{lecture}.
 \begin{equation} \label{eq:calCoeff}
     q = \Delta P + Kq
 \end{equation}
-After rearranging eq. X, a linear relationship between the dynamic pressure in the test section and the change in the static pressure can be established (eq), where $m$ is just an arbitrary constant.
+After rearranging~\eqref{eq:calCoeff}, a linear relationship between the dynamic pressure in the test section and the change in the static pressure can be established~\eqref{eq:stat2dynP}, where $m$ is just an arbitrary constant.
 \begin{equation} \label{eq:stat2dynP}
     q = \frac{1}{1 - K}\Delta P = m\Delta P
 \end{equation}
 With this relationship in mind, a calibrated pressure transducer was used to record the dynamic pressure and change in static pressure at various fan speeds.
 After a linear equation was fitted for the experimental data, the slope of the best-fit line was used to obtain the tunnel calibration coefficient, $K$.
-With the tunnel calibration coefficient, the velocity of the fluid could be determined even with the presence of an object in the wind tunnel by knowing the density of the fluid and equating the definition of the dynamic pressure and the linear relationship between pressures accounting for viscous losses (eq).
+With the tunnel calibration coefficient, the velocity of the fluid could be determined~\eqref{eq:vflow} even with the presence of an object in the wind tunnel by knowing the density of the fluid and equating the definition of the dynamic pressure and the linear relationship between pressures accounting for viscous losses~\eqref{eq:dynDef}.
 \begin{equation} \label{eq:dynDef}
     q = \frac{\rho V_\text{flow}}{2} = \frac{1}{1 - K}\Delta P
 \end{equation}
