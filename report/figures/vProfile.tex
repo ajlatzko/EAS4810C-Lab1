@@ -1,0 +1,53 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.958\fwidth,
+height=\fheight,
+at={(0\fwidth,0\fheight)},
+xmin=0,
+xmax=25,
+xlabel style={font=\color{white!15!black}},
+xlabel={Flow Speed (\unit{\m\per\s})},
+ymin=0,
+ymax=12,
+ylabel style={font=\color{white!15!black}},
+ylabel={Pitot Tube Position (\unit{in})},
+axis background/.style={fill=white},
+axis x line*=bottom,
+axis y line*=left,
+xmajorgrids,
+ymajorgrids,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=red, only marks, mark size=2.5pt, mark=*, mark options={solid, red}]
+  table[row sep=crcr]{%
+20.09649115	0\\
+22.01206383	1.5\\
+22.01197829	3\\
+21.96238566	4.5\\
+21.99520315	6\\
+22.053229	7.5\\
+22.06480624	9\\
+};
+\addlegendentry{Front}
+
+\addplot [color=blue, only marks, mark size=2.5pt, mark=*, mark options={solid, blue}]
+  table[row sep=crcr]{%
+16.310813	0\\
+22.32169196	1.5\\
+22.29623036	3\\
+22.30278936	4.5\\
+22.35630252	6\\
+22.42566381	7.5\\
+22.63432919	9\\
+};
+\addlegendentry{Back}
+
+\end{axis}
+\end{tikzpicture}%

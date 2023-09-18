@@ -85,7 +85,7 @@ Uq =   [0.001908
         0.002028
         0.002017];
 
-plotFigure = false;
+plotFigure = true;
 
 coeff = polyfit(dP,q,1);
 originalSlope = coeff(1)
@@ -115,9 +115,12 @@ if plotFigure
     hold on;
     plot(dP,q,'--ro',...
         'LineWidth',2,...
-        'MarkerSize',15,...
+        'MarkerSize',7.5,...
         'MarkerEdgeColor','k',...
         'MarkerFaceColor','r');
+    
+    xlabel('$dP$ (inH_2O)')
+    ylabel('$q$ (inH_2O)')
 
     for i = 1:10
         p(i,:) = polyfit(dPp(i,:),qp(i,:),1);
@@ -126,6 +129,7 @@ if plotFigure
     end
     grid on;
 end
+matlab2tikz('monte.tex','height','\fheight','width','\fwidth')
 
 % Calculation of K
 
@@ -177,8 +181,8 @@ q =   [-0.033754
         3.753616];
 
 % Convert to Pa
-dP = dP * 249.0889;
-q = q * 249.0889;
+%dP = dP * 249.0889;
+%q = q * 249.0889;
     
 coeff = polyfit(dP,q,1);
 trend = polyval(coeff,dP);
@@ -188,11 +192,12 @@ c = '#A6A6A6';
 hold on;
 plot(dP,q,'k.','MarkerSize',20);
 plot(dP,trend,'Color',c,'LineWidth',2.5);
-xlabel('$P_{amb} - P_{ts}$ (Pa)')
-ylabel('$q_{ts}$ (Pa)')
+xlabel('P_{amb} - P_{ts} (inH_2O)')
+ylabel('q_{ts} (inH_2O)')
 grid on;
 box off;
 set(gca,'fontname','times');
+matlab2tikz('dataPlot.tex','height','\fheight','width','\fwidth')
 
 %% Plot transducer calibration curve
 
@@ -221,8 +226,8 @@ Pind = [-3.405
          2.370];
 
 % Convert to Pa
-Pman = Pman * 249.0889;
-Pind = Pind * 249.0889;
+%Pman = Pman * 249.0889;
+%Pind = Pind * 249.0889;
     
 coeff = polyfit(Pman,Pind,1);
 trend = polyval(coeff,Pman);
@@ -232,11 +237,11 @@ c = '#A6A6A6';
 hold on;
 plot(Pman,Pind,'k.','MarkerSize',20);
 plot(Pman,trend,'Color',c,'LineWidth',2.5);
-xlabel('$P_{man}$ (Pa)')
-ylabel('$P_{ind}$ (Pa)')
+xlabel('P_{man} (inH_2O)')
+ylabel('P_{ind} (inH_2O)')
 grid on;
 box off;
-set(gca,'fontname','times');
+matlab2tikz('calibration.tex','height','\fheight','width','\fwidth')
 
 %% Plot velocity profile
 
@@ -259,6 +264,8 @@ ylim([0 10])
 legend({'Front', 'Back'},'Location','northwest');
 xlabel('Flow Speed (m/s)')
 ylabel('Pitot Tube Position (in)')
+ylim([0,12])
+xlim([0,25])
 grid on;
 box off;
-set(gca,'fontname','times');
+matlab2tikz('vProfile.tex','height','\fheight','width','\fwidth')

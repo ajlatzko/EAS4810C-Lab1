@@ -1,0 +1,75 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.65098,0.65098,0.65098}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.958\fwidth,
+height=\fheight,
+at={(0\fwidth,0\fheight)},
+xmin=0,
+xmax=7,
+xlabel style={font=\color{white!15!black}},
+xlabel={$P_\text{amb} - P_{ts}$  (\unit{in\ce{H_2O}})},
+ymin=-0.5,
+ymax=4,
+ylabel style={font=\color{white!15!black}},
+ylabel={$q_{ts}$ (\unit{in\ce{H_2O}})},
+ytick={-0.5,0,...,4},
+axis background/.style={fill=white},
+axis x line*=bottom,
+axis y line*=left,
+xmajorgrids,
+ymajorgrids
+]
+\addplot [color=black, only marks, mark size=2.5pt, mark=*, mark options={solid, black}, forget plot]
+  table[row sep=crcr]{%
+0.012713	-0.033754\\
+0.090734	-0.005299\\
+0.201955	0.041\\
+0.339457	0.106957\\
+0.508927	0.192977\\
+0.707832	0.300693\\
+0.937834	0.427998\\
+1.196545	0.579162\\
+1.492607	0.752444\\
+1.815586	0.946798\\
+2.172384	1.169706\\
+2.563	1.412288\\
+2.984124	1.681641\\
+3.435831	1.972378\\
+3.913188	2.286226\\
+4.416874	2.620044\\
+4.950815	2.981083\\
+5.505709	3.356923\\
+6.086506	3.753616\\
+};
+\addplot [color=mycolor1, line width=2.5pt, forget plot]
+  table[row sep=crcr]{%
+0.012713	-0.125427773216921\\
+0.090734	-0.0766753535373843\\
+0.201955	-0.00717748925497569\\
+0.339457	0.0787423939915312\\
+0.508927	0.184637890884562\\
+0.707832	0.308926223978964\\
+0.937834	0.452645915230459\\
+1.196545	0.614304792298335\\
+1.492607	0.79930291940723\\
+1.815586	1.00112047821418\\
+2.172384	1.22407027169055\\
+2.563	1.46815167497354\\
+2.984124	1.73129639223075\\
+3.435831	2.01355128817139\\
+3.913188	2.31183391465612\\
+4.416874	2.62656855351883\\
+4.950815	2.96020841607009\\
+5.505709	3.30694102864436\\
+6.086506	3.66985946204839\\
+};
+\end{axis}
+\end{tikzpicture}%
