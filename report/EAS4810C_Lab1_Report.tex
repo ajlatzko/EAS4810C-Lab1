@@ -25,7 +25,7 @@
     \import{./figures/}{#1.pdf_tex}
 }
 
-\sisetup{per-mode = symbol, inter-unit-product = \ensuremath{ { } \cdot { } }}
+\sisetup{per-mode = symbol, inter-unit-product = \ensuremath{ { } \cdot { } }, number-unit-product = \text{ }}
 
 \bibliographystyle{IEEEtran}
 
@@ -104,7 +104,7 @@ The second objective of the experiment was to graph velocity profiles of the flo
 
 \subsection{Calibrating the Pressure Transducer}
 
-Before proceeding with the calibration, the pressure transducer was allowed to stabilize itself to a zero setting.
+Before calibration, the pressure transducer was allowed to warm up and stabilize itself to a zero setting.
 The ambient pressure was measured, and the humidity and temperature were recorded.
 After a zero setting was ensured, the heights between the columns of the water manometer were checked for equal height.
 For positive gauge pressures, a barbed fitting was attached to a valved tee on one leg of the manometer, which was then connected to the port marked “TOTAL” on the pressure transducer.
@@ -309,7 +309,7 @@ First, a second-order polynomial was used to find the saturation pressure, $P_g$
 This yielded a saturation pressure of $2641 \pm \qty{16}{\pascal}$.
 
 \begin{equation} \label{eq:PSat}
-    P_g = \qty{4.94}{\pascal\per\K}(T - \qty{273.15}{\K})^2 + \qty{66.3}{\pascal\per\K}(T - \qty{273.15}{\K}) + \qty{1489}{\pascal}
+    P_g = 4.94(T - 273.15)^2 + 66.3(T - 273.15) + 1489
 \end{equation}
 
 Then, an equation that accounted for the relative humidity in the room was used to determine the fluid density, $\rho$, where $P_\text{amb}$ was the ambient pressure in the room, $\varphi$ was the relative humidity, $R_\text{air}$ was the specific gas constant for air, and $R_\text{vapor}$ was the specific gas constant for the water vapor in the air~\eqref{eq:rho}~\cite{calculator}.
@@ -422,7 +422,7 @@ The uncertainty for the saturation pressure ($P_g$) can be calculated using the 
 The uncertainty for the fluid density ($\rho$) can be calculated using the RSS method, where $P$ is the ambient pressure, $T$ is the ambient temperature, $\varphi$ is the relative humidity, and $P_g$ is the saturation pressure~\eqref{eq:uRho}.
 
 \begin{equation} \label{eq:uRho}
-    \mu \rho = \left[\left(\mu P \frac{\partial \rho}{\partial P}\right)^2 + \left(\mu T \frac{\partial \rho}{\partial T}\right)^2 + \left(\mu \varphi \frac{\partial \rho}{\partial \varphi}\right)^2 + \left(\mu P_g \frac{\partial \rho}{\partial P_g}\right)^2\right]^{1/2}
+    \resizebox{227pt}{!}{$\mu \rho = \left[\left(\mu P \frac{\partial \rho}{\partial P}\right)^2 + \left(\mu T \frac{\partial \rho}{\partial T}\right)^2 + \left(\mu \varphi \frac{\partial \rho}{\partial \varphi}\right)^2 + \left(\mu P_g \frac{\partial \rho}{\partial P_g}\right)^2\right]^{1/2}$}
 \end{equation}
 
 The uncertainty for the velocity of the fluid ($V_\text{flow}$) can be calculated using the RSS method, where $q$ is the dynamic pressure and $\rho$ is the fluid density~\eqref{eq:uV}.
