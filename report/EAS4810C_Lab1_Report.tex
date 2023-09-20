@@ -447,7 +447,7 @@ The observation that the flow velocities at the exit were slightly greater than 
 Another observation was that there was a measured non-zero velocity at the wall of the test section when theory of the no-slip condition indicates it should have been zero~\cite{Aero}.
 This discrepancy was likely due to the diameter of the Pitot tube not allowing exact dynamic pressure measurements at the wall~\cite{Aero}.
 For further experiments, additional mitigations like thermal insulation could be put into place to ensure steady adiabatic conditions that would help to reduce any systematic biases in the results due to heat transfer.
-Additionally, smaller increments for the velocity profile could serve to increase the accuracy of the velocity profile curve that is formed.
+Additionally, smaller increments for the velocity profile could serve to increase the resolution of the velocity profile curve that is formed.
 The velocity profile near the wall could be further improved through the utilization of laser Doppler anemometry, which would assist in obtaining accurate readings for velocities near the wall of the test section~\cite{PitotLecture}.  
 
 
@@ -455,24 +455,25 @@ The velocity profile near the wall could be further improved through the utiliza
 
 
 \begin{table}[H]
+    \renewcommand{\arraystretch}{1.7}
     \centering
     \caption{Summary of Measurement Uncertainties}
     \begin{tabular}{cccc}
     \toprule
     Parameter & Symbol & Justification & Uncertainty \\ \midrule \midrule
-    \makecell{Transducer \\ Calibration} & $\mu P_\text{ind}$ & \cite{transducer} & 0.5\% $P_\text{ind}$ \\
-    \makecell{Manometer \\ Reading} & $\mu P_\text{man}$ & \makecell{Half of \\ interval} & \qty{0.05}{in\ce{H_2O}} \\
+    Transducer Pressure & $\mu P_\text{ind}$ & \cite{transducer} & 0.5\% $P_\text{ind}$ \\
+    Manometer Reading & $\mu P_\text{man}$ & \makecell{Half of \\ interval} & \qty{0.05}{in\ce{H_2O}} \\
     Temperature & $\mu T$ & Digital & \qty{0.1}{\celsius} \\
     Humidity & $\mu \varphi$ & Digital & 1\% \\
     Ambient Pressure & $\mu P_\text{amb}$ & Barometer & \qty{0.02}{\mm} \\
-    Dynamic Pressure & $\mu q$ & \makecell{95\% Conf. \\ Int.} & \makecell{Variable, \\ $\sim \qty{0.002}{in\ce{H_2O}}$} \\
-    \makecell{Static Pressure \\ Difference} & $\mu \Delta P$ & \makecell{95\% Conf. \\ Int.} & \makecell{Variable, \\ $\sim \qty{0.002}{in\ce{H_2O}}$} \\
+    Dynamic Pressure & $\mu q$ & \makecell{95\% Conf. Int.} & Variable \\
+    \makecell{Static Pressure \\ Difference} & $\mu \Delta P$ & \makecell{95\% Conf. Int.} & Variable \\
     \makecell{Tunnel Calibration \\ Slope} & $\mu m$ & Monte Carlo & 0.0006 \\
     \makecell{Tunnel Calibration \\ Coefficient} & $\mu K$ & RSS & 0.002 \\
-    \makecell{Saturation \\ Pressure} & $\mu P_g$ & RSS & \qty{16}{\pascal} \\
+    Saturation Pressure & $\mu P_g$ & RSS & \qty{16}{\pascal} \\
     Density & $\mu \rho$ & RSS & \qty{0.004}{\kg\per\m\cubed} \\
-    \makecell{Fluid \\ Velocity} & $\mu V_\text{flow}$ & RSS & Variable, $\sim \qty{0.04}{\m\per\s}$ \\
-    \makecell{Kinematic \\ Viscosity} & $\mu \nu$ & \cite{KViscosity} & \qty{0.00000002}{\m\squared\per\s} \\ \bottomrule
+    Fluid Velocity & $\mu V_\text{flow}$ & RSS & Variable \\
+    Kinematic Viscosity & $\mu \nu$ & \cite{KViscosity} & \qty{0.00000002}{\m\squared\per\s} \\ \bottomrule
     \end{tabular}
     \label{tab:uncertainty}
 \end{table}
