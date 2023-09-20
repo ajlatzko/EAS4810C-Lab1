@@ -57,13 +57,13 @@ Section 11832 \quad September 19, 2023}
 \thispagestyle{empty}
 
 \begin{abstract}
-This study presents a method of determining airspeed or dynamic pressure when unfavorable pitot static tube conditions are present in addition to characterizing the velocity profile of a given wind tunnel.
+This study presents a method of determining airspeed or dynamic pressure when unfavorable Pitot-static probe conditions are present in addition to characterizing the velocity profile of a given wind tunnel.
 A pressure transducer is first calibrated using a water manometer to properly measure gauge pressures.
 The calibrated pressure transducer and Pitot-static probe are used to measure the dynamic and change in static pressure at differing fan speeds in the empty test section.
 It can be shown from the first law of thermodynamics that the dynamic pressure and the change in static pressure should be proportional.
-After the experimental data was analyzed, a calibration constant of $\bm{K = -0.600 \pm 0.002}$ was derived.
+After the experimental data was analyzed, a tunnel calibration constant of $\bm{K = -0.600 \pm 0.002}$ was derived.
 The Pitot-static probe was then used to measure the dynamic pressure at varying heights in the test section to define the velocity profile.
-It was found that the velocity profile exhibited signs of uniform flow.
+It was found that the velocity profile exhibited signs of uniform flow with sharp decreases in velocity at the walls.
 This velocity profile pattern was common for the entrance and exit of the test section.
 \end{abstract}
 
@@ -76,10 +76,14 @@ calibration, flow velocity, viscous loss, wind tunnel
 
 
 \IEEEPARstart{W}{ind} tunnels have proven to be a valuable tool for predicting the aerodynamic capabilities of objects for over a century~\cite{lecture}.
-Air is moved through the tunnel and the interactions between the airflow and the object can be used to simulate the actual characteristics of the object in flight.
+Air is moved through the tunnel and the interactions between the airflow and a scale model can be used to simulate the actual characteristics of the object in flight.
 As the velocity of the flowing air can be a major influence on the aerodynamics of the object in the wind tunnel, it is vital to have an accurate understanding of the velocity of the airflow.
 This can be complicated by the presence of viscous losses and the use of flow conditioning screens which affect the kinetic energy of the fluid.
-The use of a pitot tube to measure the air velocity would be the simplest choice, but the physical presence of a model in the wind tunnel would disrupt the flow to the pitot tube and cause inaccurate readings.
+The use of a Pitot-static probe to measure the air speed would be the simplest choice, but the physical presence of a model in the wind tunnel would disrupt the flow to the Pitot tube and cause inaccurate readings.
+
+The first objective of this experiment was to determine the tunnel calibration coefficient of the wind tunnel, $K$, by measuring the change in static pressure and dynamic pressure inside the test section at various fan speed settings.
+This would allow future determinations of the velocity of the flow when measurements of the dynamic pressure prove to be impractical due to the presence of models in the test section.
+The second objective of the experiment was to graph velocity profiles of the flow at the entrance and exit of the test section by establishing a relationship between the dynamic pressure measured by the Pitot-static probe and the velocity of the flow.
 
 Using the first law of thermodynamics, a relationship between the dynamic pressure and the static pressure can be established, where $q$ is the dynamic pressure, $\Delta P$ is the change in static pressure, $\rho$ is the fluid density, $\dot{Q}_{net,in}$ is the net heat transfer rate, $\dot{m}$ is the mass rate of change, and $\Delta u$ is the change in fluid velocity~\eqref{eq:firstLaw}.
 \begin{equation} \label{eq:firstLaw}
@@ -89,12 +93,12 @@ The last two terms, which represent the heat transfer and frictional losses resp
 \begin{equation} \label{eq:calCoeff}
     q = \Delta P + Kq
 \end{equation}
-After rearranging~\eqref{eq:calCoeff}, a linear relationship between the dynamic pressure in the test section and the change in the static pressure can be established~\eqref{eq:stat2dynP}, where $m$ is just an arbitrary constant.
+After rearranging \eqref{eq:calCoeff}, a linear relationship between the dynamic pressure in the test section and the change in the static pressure can be established~\eqref{eq:stat2dynP}, where $m$ is an arbitrary constant.
 \begin{equation} \label{eq:stat2dynP}
     q = \frac{1}{1 - K}\Delta P = m\Delta P
 \end{equation}
 With this relationship in mind, a calibrated pressure transducer was used to record the dynamic pressure and change in static pressure at various fan speeds.
-After a linear equation was fitted for the experimental data, the slope of the best-fit line was used to obtain the tunnel calibration coefficient, $K$.
+After a linear equation would then be fitted for the experimental data, the slope of the best-fit would be measured which would represent the constant $K$.
 With the tunnel calibration coefficient, the velocity of the fluid could be determined~\eqref{eq:vflow} even with the presence of an object in the wind tunnel by knowing the density of the fluid and equating the definition of the dynamic pressure and the linear relationship between pressures accounting for viscous losses~\eqref{eq:dynDef}.
 \begin{equation} \label{eq:dynDef}
     q = \frac{\rho V_\text{flow}}{2} = \frac{1}{1 - K}\Delta P
@@ -103,20 +107,27 @@ With the tunnel calibration coefficient, the velocity of the fluid could be dete
     V_\text{flow} = \sqrt{\frac{2\Delta P}{\rho(1 - K)}}
 \end{equation}
 
-The first objective of this experiment was to determine the tunnel calibration coefficient of the wind tunnel by measuring the change in static pressure and dynamic pressure inside the test section at various fan speed settings.
-This would allow future determinations of the velocity of the flow when measurements of the dynamic pressure prove to be impractical due to the presence of models in the test section.
-The second objective of the experiment was to graph velocity profiles of the flow at the entrance and exit of the test section by establishing a relationship between the dynamic pressure measured by the Pitot-static probe and the velocity of the flow.
+From these equations, velocity profile curves at the entrance and exit of the test section could be formed.
 
 \section{Procedure}
 
 \subsection{Calibrating the Pressure Transducer}
 
-Before calibration, the pressure transducer was allowed to warm up and stabilize itself to a zero setting.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=3.25in]{transducerPort}
+    \caption{``TOTAL'' and ``STATIC'' ports of pressure transducer used for pressure measurements.}
+    \label{fig:transducerPort}
+\end{figure}
+
+Before proceeding with the calibration, the pressure transducer was allowed to stabilize itself to a zero setting.
 The ambient pressure was measured, and the humidity and temperature were recorded.
+An empty graduated cylinder was weighed on a lab scale which was followed by a non-specific amount of water being poured into the cylinder.
+The total mass of the graduated cylinder with water was measured with a lab scale while the volume of water was measured using the provided marks on the cylinder.
 After a zero setting was ensured, the heights between the columns of the water manometer were checked for equal height.
+
 For positive gauge pressures, a barbed fitting was attached to a valved tee on one leg of the manometer, which was then connected to the port marked ``TOTAL'' on the pressure transducer.
 The other port of the pressure transducer, marked ``STATIC'', was exposed to the ambient environment (Fig.~\ref{fig:transducerPort}).
-
 The pressure selector was set to the zero position and the pressure display was set as close to ``0000'' using the ``Zero'' potentiometer.
 The valved tee was then opened, and a pressure near the maximum differential pressure of \qty{6}{in\ce{H_2O}} was then applied to the manometer by pumping the rubber bulb.
 Once the manometer neared the maximum differential pressure, the valved tee was closed.
@@ -134,28 +145,27 @@ The difference in pressure readings was taken for five pressure measurements bet
 \subsection{Testing for the Calibration Coefficient}
 
 Once the pressure transducer was calibrated, the ``STATIC'' and ``TOTAL'' ports had their connections disconnected.
-The pitot static probe was placed in the middle of the test section lengthwise and height wise.
-The calibration was performed for the wind tunnel settings of \qty{2.5}{\hertz} to \qty{50}{\hertz} in \qty{2.5}{\hertz} intervals.
-At each wind tunnel setting the dynamic pressure and the ambient pressure difference were taken using a LABVIEW pressure reading software.
-To measure the dynamic pressure, the tubes marked stagnation and static pitot tube pressure were connected to the ``STATIC'' port and ``TOTAL'' port respectively.
-To measure the ambient pressure difference, the tube marked test section pressure was connected to the ``TOTAL'' port, the ``STATIC'' port was left open to air.
-The LABVIEW software was first used by selecting the bias input while at \qty{0}{\hertz}.
-The speed was then increased to \qty{2.5}{\hertz} and the dynamic pressure and ambient pressure difference were recorded by selecting the save button.
+The Pitot-static probe was placed in the middle of the test section lengthwise and height wise.
+At each wind tunnel setting the dynamic pressure and the static pressure difference were taken using a LABVIEW pressure reading software.
+The experiment was performed for nineteen equally spaced flow speeds from \qty{3.93}{\m\per\s} to \qty{40.28}{\m\per\s}.
+To measure the dynamic pressure, the tubes marked ``stagnation pitot tube'' and ``static pitot tube'' pressure were connected to the ``STATIC'' port and ``TOTAL'' port respectively.
+To measure the static pressure difference, the tube marked ``stagnation'' was connected to the ``TOTAL'' port, and the ``STATIC'' port was left open to air.
+The LABVIEW software was first used by taring the initial bias pressure value while at \qty{0}{\m\per\s}.
+The flow speed was then increased to \qty{3.93}{\m\per\s} and the dynamic pressure and static pressure difference were recorded by selecting the save button.
 The data was collected over 5 seconds with 1000 data points being taken per second.
-This process was repeated until \qty{50}{\hertz} was reached.
-
+This process was repeated until the flow speed of \qty{40.28}{\m\per\s} was reached.
 
 \subsection{Forming the Velocity Profile}
 
 The ``STATIC'' and ``TOTAL'' ports of the transducer were configured in the same manner as the dynamic pressure.
-The pitot static probe was brought to the front of the test section and was lowered to its minimum height.
-The pressure difference was then recorded using the LABVIEW pressure reading software.
+The Pitot-static probe was brought to the front of the test section and was lowered to its minimum height.
+The dynamic pressure was then recorded using the LABVIEW pressure reading software.
 The data was recorded for 5 seconds with 1000 data points per second.
-After data was recorded, the height of the pitot static probe was increased by \qty{1.5}{in}.
-At every increment the same process of data collection was performed.
-The pitot static probe was then moved to the back of the test section and then lowered to its minimum height.
-The distance the pitot static probe traveled was recorded.
-The same incremental process was performed for the pressure readings of the back of the test section.
+After data was recorded, the height of the Pitot-static probe was increased by \qty{1.5}{in}.
+At every increment, the same process of data collection was performed.
+The Pitot-static probe was then moved to the back of the test section and then lowered to its minimum height.
+The distance the Pitot-static probe traveled was recorded.
+The same incremental process was performed for the dynamic pressure readings of the back of the test section.
 
 
 \section{Results}
@@ -163,20 +173,24 @@ The same incremental process was performed for the pressure readings of the back
 
 The ambient pressure, $P_\text{amb}$, of the test room was measured using a wall-mounted barometer.
 The temperature, $T$, and the relative humidity, $\varphi$, of the room was measured using a digital thermometer and hygrometer placed next to the test section (Table~\ref{tab:atmCond}).
+The empty and filled mass of a graduated cylinder was taken using the lab scale and the volume of water inside the graduated cylinder was measured (Table~\ref{tab:atmCond}).
 The data for the initial calibration of the pressure transducer was gathered by reading the pressure readout on the transducer and by recording the difference of heights on the water manometer (Table~\ref{tab:atmCond}).
-These two sets of data were then plotted and fitted with a trendline for an accurate depiction of the relation between the two values (Fig.~\ref{fig:calibration}).
+These two sets of data were then plotted and fitted with a trendline for an accurate depiction of the relationship between the two values (Fig.~\ref{fig:calibration}).
 The data appears to be strongly correlated to a linear regression for both positive and negative pressure ranges.
-It can be noted that at the origin the trendline does not run through the coordinates (0,0).
+It can be noted that the trendline does not pass through the origin.
 
 \begin{table}[H]
     \centering
-    \caption{Atmospheric Conditions}
+    \caption{Initial Conditions}
     \begin{tabular}{ccc}
     \toprule
-    Parameter & Value & Uncertainty \\ \midrule \midrule
+    Parameter & Value & Uncertainty ($\pm$) \\ \midrule \midrule
     $P_\text{amb}$ & \qty{760.11}{mm\ce{Hg}} & \qty{0.02}{mm\ce{Hg}} \\
     $T$ & \qty{22}{\celsius} & \qty{0.1}{\celsius} \\
-    $\varphi$ & 50\% & 1\% \\ \bottomrule
+    $\varphi$ & 50\% & 1\% \\
+    $V$ & \qty{185}{\milli\liter} & \qty{2.50}{\milli\liter} \\
+    $m_\text{empty}$ & \qty{156.9}{\g} & \qty{0.1}{\g} \\
+    $m_\text{full}$ & \qty{344.6}{\g} & \qty{0.1}{\g} \\ \bottomrule
     \end{tabular}
     \label{tab:atmCond}
 \end{table}
@@ -186,7 +200,7 @@ It can be noted that at the origin the trendline does not run through the coordi
     \caption{Pressure Transducer Calibration}
     \begin{tabular}{cccc}
     \toprule
-    $P_\text{man}$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $P_\text{man}$ (\unit{in\ce{H_2O}})} & $P_\text{ind}$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $P_\text{ind}$ (\unit{in\ce{H_2O}})} \\ \midrule \midrule
+    $P_\text{man}$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $P_\text{man}$ ($\pm$\unit{in\ce{H_2O}})} & $P_\text{ind}$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $P_\text{ind}$ ($\pm$\unit{in\ce{H_2O}})} \\ \midrule \midrule
     $-$3.40 & 0.05 & $-$3.405 & 0.017 \\
     $-$3.35 & 0.05 & $-$3.460 & 0.007 \\
     $-$3.60 & 0.05 & $-$3.613 & 0.018 \\
@@ -204,13 +218,13 @@ It can be noted that at the origin the trendline does not run through the coordi
 \begin{figure}[H]
     \centering
     \input{figures/calibration.tex}
-    \caption{Indicated Transducer Gauge Pressure vs. Indicated Manometer Gauge Pressure}
+    \caption{Transducer Calibration Curve.}
     \label{fig:calibration}
 \end{figure}
 
 The data for the dynamic pressure of the wind tunnel and the change in static pressure were gathered using a computer that was connected to the pressure transducer running a LABVIEW.vi program.
 For each fan speed, 5000 data points over five seconds were gathered and averaged for each pressure measurement (Fig.~\ref{fig:data}).
-The relationship between the two pressures at varying speed appears to be linear.
+The relationship between the two pressures at varying speeds appears to be linear.
 The distance between points is also seen to increase between the points plotted.
 The data points with the smallest magnitude of gauge pressures correspond to the lowest fan speed with all higher fan speeds coming after it sequentially.
 
@@ -226,17 +240,16 @@ The data was measured every \qty{1.5}{in} starting at an indicated ruler height 
 This starting height of \qty{1.5}{in} corresponded to the lowest possible position that the Pitot-static probe could be positioned (Fig.~\ref{fig:pitotPic}).
 The horizontal distance between the front and the back of the test section was recorded as $\qty{43}{in} \pm \qty{0.05}{in}$ (Table T).
 At the front of the test section, the dynamic pressure was noted to be non-zero at the Pitot-static probe's lowest position.
-This observation was consistent with the back of the test section which also provided a lower non-zero dynamic pressure reading.
-After the first height change, the pressure reached a stable value.
-This value fluctuated in small amounts but did exhibit large changes relative to the initial change.
-After collecting the data for the velocity profile, the maximum pressure reached at the back end of the test section was reported as being slightly higher than that of the pressure at the front end of the test section (Table T).
+This observation was consistent with the back of the test section which also provided a non-zero dynamic pressure reading.
+After the first height change, the dynamic pressure generally stabilized to a constant value.
+After collecting the data for the velocity profile, the dynamic pressures at the back end of the test section were noted as being slightly higher than that of the dynamic pressure at the front end of the test section (Table~\ref{tab:vProfile}).
 
 \begin{table}[H]
     \centering
-    \caption{Pressure Transducer Calibration}
+    \caption{Velocity Profile Measurements}
     \begin{tabular}{ccccc}
     \toprule
-    \makecell{Height \\ (inches)} & \makecell{$q_\text{front}$ \\ (\unit{in\ce{H_2O}})} & \makecell{Uncertainty in \\ $q_\text{front}$ \\ (\unit{in\ce{H_2O}})}& \makecell{$q_\text{back}$ \\ (\unit{in\ce{H_2O}})} & \makecell{Uncertainty in \\ $q_\text{back}$ \\ (\unit{in\ce{H_2O}})} \\ \midrule \midrule
+    \makecell{Height \\ (inches)} & \makecell{$q_\text{front}$ \\ (\unit{in\ce{H_2O}})} & \makecell{Uncertainty in \\ $q_\text{front}$ \\ ($\pm$\unit{in\ce{H_2O}})}& \makecell{$q_\text{back}$ \\ (\unit{in\ce{H_2O}})} & \makecell{Uncertainty in \\ $q_\text{back}$ \\ ($\pm$\unit{in\ce{H_2O}})} \\ \midrule \midrule
     1.5  & 0.965 & 0.002 & 0.636 & 0.002 \\
     3    & 1.158 & 0.002 & 1.191 & 0.002 \\
     4.5  & 1.158 & 0.002 & 1.188 & 0.002 \\
@@ -251,6 +264,18 @@ After collecting the data for the velocity profile, the maximum pressure reached
 
 \section{Discussion}
 
+\subsection{Conversion from in\ce{H_2O} to Pascals}
+
+To convert the gauge pressure readings calibrated from the manometer to pascals, the water density, $\rho_\text{water}$, was first calculated where $m_\text{full}$ was the mass of the graduated cylinder with water, $m_\text{empty}$ was the mass of the empty graduated cylinder, and $V$ was the volume of water in the graduated cylinder~\eqref{eq:density}.
+Using this water density and existing literature on the Earth's standard gravitational acceleration, $g$~\cite{gravity}, a conversion factor of \qty{252.7}{Pa/in\ce{H_2O}} was obtained.
+
+\begin{equation} \label{eq:density}
+    \rho_\text{water} = \frac{m_\text{full} - m_\text{empty}}{V}
+\end{equation}
+\begin{equation} \label{eq:convFactor}
+    P_\text{pascal} = \rho_\text{water}g\left(\frac{1}{39.37}\right)
+\end{equation}
+
 \subsection{Pressure Transducer Calibration Accuracy}
 
 Five calibration points each were taken in the positive and negative pressure differential ranges.
@@ -258,17 +283,17 @@ The transducer calibration curve (Fig.~\ref{fig:calibration}) was plotted to obt
 With an $R^2$ value of 0.9996, this indicated that the linear regression matched very well with the experimental calibration data.
 One observation is that the slope of the line of best fit (1.005) was very close to unity.
 This indicated that the span of the pressure transducer matched well with the physical manometer for both the positive and negative range of gauge pressures.
-Despite best attempts to adjust the zero potentiometer on the pressure transducer to match the resting position of the manometer, the $y$-intercept of the equation was $-0.0373$.
+Despite attempts to adjust the zero potentiometer on the pressure transducer to match the resting position of the manometer, the $y$-intercept of the equation was $-0.0373$.
 This indicated that there may have been some slight systematic bias in the pressure transducer going from the positive to negative ranges as the expected $y$-intercept was zero.
 This potential systematic bias was accounted for by taring all additional pressure readings against the ambient pressure reading while the fan was not powered on.
 
 \subsection{Tunnel Calibration Coefficient}
 
-During the experiment, the change in static pressure ($\Delta P$) and the dynamic pressure ($q$) were recorded for 19 different fan speed settings as seen in Table T.
-A Monte Carlo simulation was run by simulating 10000 data sets of the pressures considering the uncertainty in the pressure readings (Fig.\ref{fig:Monte}).
+During the experiment, the change in static pressure ($\Delta P$) and the dynamic pressure ($q$) were recorded for 19 different fan speed settings as seen in Table~\ref{tab:avgdData}.
+A Monte Carlo simulation was run by simulating 10000 data sets of the pressures considering the uncertainty in the pressure readings (Fig.~\ref{fig:Monte}).
 A linear regression was fitted to each data set and a statistical analysis of the linear regressions yielded a mean slope ($\overline{m}$) of $0.6249 \pm 0.0006$.
 Eq.~\eqref{eq:stat2dynP} can be manipulated to solve for the tunnel calibration coefficient, $K$~\eqref{eq:K}.
-From the value of the mean slope, it was found that for the specific wind tunnel used, the tunnel calibration coefficient was $0.600 \pm 0.002$ (See Appendix for uncertainty calculation for $K$).
+From the value of the mean slope, it was found that for the specific wind tunnel used, the tunnel calibration coefficient was independent of $q$ and had a constant value of $-0.600 \pm 0.002$ (See Appendix for uncertainty calculation for $K$). Since $K$ quantifies the viscous loss in the wind tunnel, this allows for an accurate prediction of dynamic pressure given a static pressure difference.
 
 \begin{equation} \label{eq:K}
     K = 1 - \frac{1}{\overline{m}}
@@ -283,30 +308,30 @@ From the value of the mean slope, it was found that for the specific wind tunnel
 
 \begin{table}[H]
     \centering
-    \caption{Monte-Carlo Data Points}
-    \begin{tabular}{cccc}
+    \caption{Tunnel Calibration Pressure Readings}
+    \begin{tabular}{ccccc}
     \toprule
-    $\Delta P$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $\Delta P$ (\unit{in\ce{H_2O}})} & $q$ (\unit{in\ce{H_2O}}) & \makecell{Uncertainty in \\ $q$ (\unit{in\ce{H_2O}})} \\ \midrule \midrule
-    0.013 & 0.002 & -0.034 & 0.002 \\
-    0.091 & 0.002 & -0.005 & 0.002 \\
-    0.202 & 0.002 & 0.041  & 0.002 \\
-    0.339 & 0.002 & 0.107  & 0.002 \\
-    0.509 & 0.002 & 0.193  & 0.002 \\
-    0.708 & 0.002 & 0.301  & 0.002 \\
-    0.938 & 0.002 & 0.428  & 0.003 \\
-    1.197 & 0.002 & 0.579  & 0.002 \\
-    1.493 & 0.002 & 0.752  & 0.002 \\
-    1.816 & 0.002 & 0.947  & 0.002 \\
-    2.172 & 0.002 & 1.170  & 0.002 \\
-    2.563 & 0.002 & 1.412  & 0.002 \\
-    2.984 & 0.002 & 1.682  & 0.002 \\
-    3.436 & 0.002 & 1.972  & 0.002 \\
-    3.913 & 0.002 & 2.286  & 0.002 \\
-    4.417 & 0.002 & 2.620  & 0.002 \\
-    4.951 & 0.002 & 2.981  & 0.002 \\
-    5.506 & 0.002 & 3.357  & 0.002 \\ \bottomrule
+    $\Delta P$ (\unit{\pascal}) & \makecell{Uncertainty \\ in $\Delta P$ ($\pm$\unit{\pascal})} & $q$ (\unit{\pascal}) & \makecell{Uncertainty \\ in $q$ ($\pm$\unit{\pascal})} & \makecell{Uncertainty \\ in slope ($\pm$)} \\ \midrule \midrule
+    3.21    & 0.50 & 9.17   & 0.48 & \multirow{18}{*}{0.0006} \\
+    22.93   & 0.49 & 16.35  & 0.50 &                          \\
+    51.03   & 0.49 & 28.05  & 0.48 &                          \\
+    85.78   & 0.48 & 44.72  & 0.50 &                          \\
+    128.61  & 0.47 & 66.45  & 0.48 &                          \\
+    178.87  & 0.48 & 93.67  & 0.49 &                          \\
+    236.99  & 0.50 & 125.84 & 0.70 &                          \\
+    302.37  & 0.49 & 164.04 & 0.48 &                          \\
+    377.18  & 0.50 & 207.83 & 0.50 &                          \\
+    458.80  & 0.48 & 256.94 & 0.48 &                          \\
+    548.96  & 0.51 & 313.27 & 0.52 &                          \\
+    647.67  & 0.50 & 374.57 & 0.52 &                          \\
+    754.09  & 0.51 & 442.64 & 0.50 &                          \\
+    868.23  & 0.49 & 516.11 & 0.51 &                          \\
+    988.86  & 0.50 & 595.42 & 0.50 &                          \\
+    1116.14 & 0.51 & 679.77 & 0.51 &                          \\
+    1251.07 & 0.50 & 771.01 & 0.51 &                          \\
+    1391.29 & 0.50 & 865.98 & 0.51 &                          \\ \bottomrule
     \end{tabular}
-    \label{tab:MCPoints}
+    \label{tab:avgdData}
 \end{table}
 
 \subsection{Velocity Profile of the Wind Tunnel Test Section}
@@ -339,7 +364,7 @@ Table~\ref{tab:vProfile} summarizes the derived flow velocity for the different 
     \begin{tabular}{ccccc}
     \toprule
     \multirowcell{3}{Vertical Position of Pitot \\ Tube in Test Section (\unit{in})} & \multicolumn{2}{c}{\makecell{Front of Test \\ Section}} & \multicolumn{2}{c}{\makecell{Back of Test \\ Section}} \\ \cmidrule(l){2-5} 
-    & \makecell{$V_\text{front}$ \\ (\unit{\m\per\s})} & \makecell{$\mu V_\text{front}$ \\ (\unit{\m\per\s})} & \makecell{$V_\text{back}$ \\ (\unit{\m\per\s})} & \makecell{$\mu V_\text{back}$ \\ (\unit{\m\per\s})} \\ \midrule \midrule
+    & \makecell{$V_\text{front}$ \\ (\unit{\m\per\s})} & \makecell{$\mu V_\text{front}$ \\ ($\pm$\unit{\m\per\s})} & \makecell{$V_\text{back}$ \\ (\unit{\m\per\s})} & \makecell{$\mu V_\text{back}$ \\ ($\pm$\unit{\m\per\s})} \\ \midrule \midrule
     0.0 & 20.10 & 0.04 & 16.31 & 0.04 \\
     1.5 & 22.01 & 0.04 & 22.32 & 0.04 \\
     3.0 & 22.01 & 0.04 & 22.30 & 0.04 \\
@@ -359,24 +384,56 @@ Table~\ref{tab:vProfile} summarizes the derived flow velocity for the different 
 \end{figure}
 
 Fig.~\ref{fig:vProfile} shows that the air exhibited approximately uniform flow as expected.
-The air is moving slower at the walls which indicates the presence of viscous forces at the walls of the test section as predicted~\cite{lecture}.
+The air appeared to be moving slower at the walls which indicates the presence of viscous forces~\cite{lecture}.
 Classic aerodynamic theory indicates that the velocity at the wall should be zero.
 The deviation between the experimental results and theory likely stems from the diameter of the Pitot tube creating an offset and preventing a true reading at the bottom wall of the test section.
-It should be noted that due to the geometry of the Pitot-Static probe, a reading at the top wall of the test section could not be obtained.
-One observation that can be made from Fig.~\ref{fig:vProfile} is that the velocities at the back of the test section were generally higher than the at the front.
-This difference could have been due to heat addition from the ambient environment to the air inside the wind tunnel causing it to speed up.
+This indicates that for future experiments, objects should be placed near the middle of the test section and away from the walls to have accurate readings of the flow speed.
+It should be noted that due to the geometry of the Pitot-Static probe and the test section, a reading at the top wall of the test section could not be obtained.
+One observation that can be made from Fig.~\ref{fig:vProfile} is that the velocities at the back of the test section were generally higher than those at the front.
+This difference could have been due to heat addition from the ambient environment to the air inside the wind tunnel causing the flow to accelerate.
 It was observed that the temperature of the ambient environment had gradually increased over the duration of the experiment.
-This heat addition could be attributed to the presence of people in the wind tunnel laboratory and the operation of the wind tunnels themselves adding heat to the flow in the test section.
+This heat addition could have been due to the presence of people in the wind tunnel laboratory and the operation of the wind tunnels themselves adding heat to the flow in the test section.
+
+\subsection{Flow Speed as a Function of Fan Setting}
+
+As an additional point of investigation, the flow speeds that were derived from the recorded dynamic pressure were plotted against the various fan speed settings in \unit{\hertz}.
+It was found that the relationship was approximately linear.
+The data from Fig.~\ref{fig:Hz} indicates that the flow speed has a correlation to the fan setting, but only for a certain range of fan settings.
+This presents a contrast to the tunnel calibration method which expressed a linear relationship for all fan settings that were measured.
+Furthermore, this relationship may not be replicable for future experiments where models would be placed in the test section as the presence of models may disrupt the flow.
+These observations point to the tunnel calibration method as a more appealing method of determing the flow speed.
+
+\begin{figure}[H]
+    \centering
+    \input{figures/fanVsSpd.tex}
+    \caption{Relation between flow speed and fan setting after discarding the low-speed outlier data points.}
+    \label{fig:Hz}
+\end{figure}
+
+\subsection{Reynolds Number in the Test Section}
+
+To investigate whether the velocity profile measured in the test section aligns with theory, the Reynolds number was calculated using~\eqref{eq:Re}~\cite{HeatTransfer}, where $u$ is the fluid velocity, $d_h$ is the hydraulic diameter of the pipe, $\nu$ is the kinematic viscosity, and $Re$ is the Reynolds number.
+\begin{equation} \label{eq:Re}
+    Re = \frac{ud_h}{\nu}
+\end{equation}
+The fluid velocity was taken from the approximate center of the test section.
+At the front of the test section at \qty{6}{in} position, the Reynolds number was calculated to be $438000 \pm 1547$. At the back of the test section, it was $444000 \pm 1571$. Both numbers are greater than the critical Reynolds number of about 2800, indicating that the flow is turbulent~\cite{HeatTransfer}. The velocity profile in Fig.~\ref{fig:vProfile} aligns with aerodynamic theory for turbulent pipe flow.
+
 
 \section{Conclusion}
 
 
 For the first part of the experiment, the value of the tunnel calibration coefficient was found to be $-0.600 \pm 0.002$.
-The determination of the tunnel calibration coefficient will allow future experiments to determine the velocity of the flow without the use of a Pitot-static probe in the test-section.
-A simple measurement of the change in static pressure between the ambient environment and the test section can be interpolated with the tunnel calibration coefficient to obtain a corresponding dynamic pressure from which the flow velocity can be calculated.
-For the second part of the experiment, the velocity profiles at the entrance and exit of the test section exhibited signs of uniform flow as expected.
+The determination of the tunnel calibration coefficient will allow future experiments to determine the velocity of the flow without the use of a Pitot-static probe in the test section.
+A measurement of the change in static pressure between the ambient environment and the test section can be interpolated with the tunnel calibration coefficient.
+This interpolation provides a corresponding dynamic pressure, from which the flow velocity can be calculated.
+For the second part of the experiment, the velocity profiles at the entrance and exit of the test section exhibited signs of uniform flow as predicted in the lecture~\cite{lecture}.
 The observation that the flow velocities at the exit were slightly greater than those at the entrance indicated the presence of an external factor that was adding kinetic energy to the flow.
-If this experiment were to be repeated, additional mitigations, like thermal insulation, could be put into place to ensure steady adiabatic conditions that would help to reduce any systematic biases in the results.
+Another observation was that there was a measured non-zero velocity at the wall of the test section when theory of the no-slip condition indicates it should have been zero~\cite{Aero}.
+This discrepancy was likely due to the diameter of the Pitot tube not allowing exact dynamic pressure measurements at the wall~\cite{Aero}.
+For further experiments, additional mitigations like thermal insulation could be put into place to ensure steady adiabatic conditions that would help to reduce any systematic biases in the results.
+Additionally, smaller increments for the velocity profile could serve to increase the accuracy of the velocity profile curve that is formed.
+The velocity profile near the wall could be further improved through the utilization of laser Doppler anemometry, which would assist in obtaining accurate readings for velocities near the wall of the test section~\cite{PitotLecture}.  
 
 
 \section*{Appendix A: Uncertainty Calculation}
@@ -388,7 +445,7 @@ If this experiment were to be repeated, additional mitigations, like thermal ins
     \begin{tabular}{cccc}
     \toprule
     Parameter & Symbol & Justification & Uncertainty \\ \midrule \midrule
-    \makecell{Transducer \\ Calibration} & $\mu P_\text{ind}$ & Manual & 0.5\% $P_\text{ind}$ \\
+    \makecell{Transducer \\ Calibration} & $\mu P_\text{ind}$ & \cite{transducer} & 0.5\% $P_\text{ind}$ \\
     \makecell{Manometer \\ Reading} & $\mu P_\text{man}$ & \makecell{Half of \\ interval} & \qty{0.05}{in\ce{H_2O}} \\
     Temperature & $\mu T$ & Digital & \qty{0.1}{\celsius} \\
     Humidity & $\mu \varphi$ & Digital & 1\% \\
@@ -399,52 +456,64 @@ If this experiment were to be repeated, additional mitigations, like thermal ins
     \makecell{Tunnel Calibration \\ Coefficient} & $\mu K$ & RSS & 0.002 \\
     \makecell{Saturation \\ Pressure} & $\mu P_g$ & RSS & \qty{16}{\pascal} \\
     Density & $\mu \rho$ & RSS & \qty{0.004}{\kg\per\m\cubed} \\
-    Flow Velocity & $\mu V_\text{flow}$ & RSS & Variable, $\sim \qty{0.04}{\m\per\s}$ \\ \bottomrule
+    Fluid Velocity & $\mu V_\text{flow}$ & RSS & Variable, $\sim \qty{0.04}{\m\per\s}$ \\
+    \makecell{Kinematic \\ Viscosity} & $\mu \nu$ & \cite{KViscosity} & \qty{0.00000002}{\m\squared\per\s} \\ \bottomrule
     \end{tabular}
     \label{tab:uncertainty}
 \end{table}
 
 The uncertainty for the Dynamic Pressure ($q$) and the Static Pressure Difference ($\Delta P$) was obtained using a 95\% confidence interval with a normal distribution.
 A normal distribution was used instead of a student's $t$-distribution as the sample size of 5000 was deemed sufficiently large that the sample distribution approach the normal distribution due to the central limit theorem~\cite{MoMLecture}.
-A $z$ value of 1.96 was used for the calculation of the 95\% confidence interval~\cite{MoMLecture}.
+A $z^*$ value of 1.96 was used for the calculation of the 95\% confidence interval~\cite{MoMLecture}.
 The margin of error then served as the uncertainty, where $\mu X$ is the margin of error for an arbitrary measurement, $S_x$ is the sample standard deviation, and $n$ is the number of samples~\eqref{eq:conf}.
-For both pressure readings, the margin of error, after rounding to the nearest thousandth, was consistently 0.002 except for one specific sample of the dynamic pressure ($q_i = \qty{0.428}{in\ce{H_2O}}$ at the \qty{20}{\Hz} fan setting) where it was 0.003.
 
 \begin{equation} \label{eq:conf}
-    \mu X = z \frac{S_x}{\sqrt{n}}
+    \mu X = z^* \frac{S_x}{\sqrt{n}}
 \end{equation}
 
-The uncertainty for the tunnel calibration coefficient ($K$) can be calculated using the RSS method, where $m$ is the tunnel calibration slope obtained from the line of best fit of the dynamic Pressure vs. static pressure difference plot (Fig.~\ref{fig:data})~\eqref{eq:uK}.
+The uncertainty for the tunnel calibration coefficient ($K$) can be calculated using error propagation theory~\cite{errorprop}, where $m$ is the tunnel calibration slope obtained from the line of best fit of the dynamic pressure vs. static pressure difference plot (Fig.~\ref{fig:data})~\eqref{eq:uK}.
 
 \begin{equation} \label{eq:uK}
-    \mu K = \left[\left(\mu m \frac{\partial K}{\partial m}\right)^2\right]^{1/2} = -\frac{\mu m}{m^2}
+    \mu K = \mu m \frac{\partial K}{\partial m} = -\frac{\mu m}{m^2}
 \end{equation}
 
-The uncertainty for the saturation pressure ($P_g$) can be calculated using the RSS method, where $T$ is the ambient temperature~\eqref{eq:uPsat}.
+The uncertainty for the saturation pressure ($P_g$) can be calculated using error propagation theory~\cite{errorprop}, where $T$ is the ambient temperature~\eqref{eq:uPsat}.
 
 \begin{equation} \label{eq:uPsat}
-    \mu P_g = \left[\left(\mu T \frac{\partial P_g}{\partial T}\right)^2\right]^{1/2}
+    \mu P_g = \mu T \frac{\partial P_g}{\partial T}
 \end{equation}
 
-The uncertainty for the fluid density ($\rho$) can be calculated using the RSS method, where $P$ is the ambient pressure, $T$ is the ambient temperature, $\varphi$ is the relative humidity, and $P_g$ is the saturation pressure~\eqref{eq:uRho}.
+The uncertainty for the fluid density ($\rho$) can be calculated using the RSS method~\cite{MoMLecture}, where $P$ is the ambient pressure, $T$ is the ambient temperature, $\varphi$ is the relative humidity, and $P_g$ is the saturation pressure~\eqref{eq:uRho}.
 
 \begin{equation} \label{eq:uRho}
-    \resizebox{227pt}{!}{$\mu \rho = \left[\left(\mu P \frac{\partial \rho}{\partial P}\right)^2 + \left(\mu T \frac{\partial \rho}{\partial T}\right)^2 + \left(\mu \varphi \frac{\partial \rho}{\partial \varphi}\right)^2 + \left(\mu P_g \frac{\partial \rho}{\partial P_g}\right)^2\right]^{1/2}$}
+    \resizebox{227pt}{!}{$\displaystyle{\mu \rho = \left[\left(\mu P \frac{\partial \rho}{\partial P}\right)^2 + \left(\mu T \frac{\partial \rho}{\partial T}\right)^2 + \left(\mu \varphi \frac{\partial \rho}{\partial \varphi}\right)^2 + \left(\mu P_g \frac{\partial \rho}{\partial P_g}\right)^2\right]^{1/2}}$}
 \end{equation}
 
-The uncertainty for the velocity of the fluid ($V_\text{flow}$) can be calculated using the RSS method, where $q$ is the dynamic pressure and $\rho$ is the fluid density~\eqref{eq:uV}.
+The uncertainty for the velocity of the fluid ($V_\text{flow}$) can be calculated using the RSS method~\cite{MoMLecture}, where $q$ is the dynamic pressure and $\rho$ is the fluid density~\eqref{eq:uV}.
 The uncertainty, while technically a distinct value for each value of the fluid velocity, was consistently $\pm \qty{0.04}{\m\per\s}$ when rounded to the nearest hundredth.
 
 \begin{equation} \label{eq:uV}
     \mu V_\text{flow} = \left[\left(\mu q \frac{\partial V_\text{flow}}{\partial q}\right)^2 + \left(\mu \rho \frac{\partial V_\text{flow}}{\partial \rho}\right)^2\right]^{1/2}
 \end{equation}
 
-\begin{thebibliography}{9}
+The uncertainty for the Reynolds number of the fluid ($Re$) was calculated using the RSS method~\cite{MoMLecture}, where $u$ is the fluid velocity, $d_h$ is the hydraulic diameter of the pipe, $\nu$ is the kinematic viscosity, and $Re$ is the Reynolds number~\eqref{eq:uRe}.
+
+\begin{equation} \label{eq:uRe}
+    \resizebox{227pt}{!}{$\displaystyle{\mu Re = \left[\left(\mu \nu \frac{\partial Re}{\partial \nu}\right)^2 + \left(\mu u \frac{\partial Re}{\partial u}\right)^2 + \left(\mu d_h \frac{\partial Re}{\partial d_h}\right)^2\right]^{1/2}}$}
+\end{equation}
+
+\begin{thebibliography}{99}
     \bibitem{lecture} Abbitt, J. D., ``Wind Tunnel Operating Characteristics
     Wind tunnel Calibration,'' \textit{University of Florida E-Learning} [PowerPoint slides], URL: \url{https://ufl.instructure.com/courses/480244/files/80557995}, 2023.
     \bibitem{MoMLecture} Ridgeway, S., ``MOM\_lab Uncertainty basics w tension,'' \textit{University of Florida E-Learning} [PowerPoint slides], URL: \url{https://ufl.instructure.com/courses/447927/files/65674680}, 2022.
     \bibitem{calculator} Abbitt, J. D., and Ukeiley, L. S., ``Air density calculator.xlsx,'' \textit{University of Florida E-Learning} [Excel spreadsheet], URL: \url{https://ufl.instructure.com/courses/480244/files/77543966}, 2023.
-    \bibitem{inH2OtoPa} Thompson, A., and Taylor, B. N, ``Appendix B. Conversion Factors,'' \textit{Guide for the Use of the International System of Units (SI)}, National Institute of Standards and Technology, Maryland, 2008, p. 50.
+    \bibitem{gravity} Thompson, A., and Taylor, B. N, ``Appendix B. Conversion Factors,'' \textit{Guide for the Use of the International System of Units (SI)}, National Institute of Standards and Technology, Maryland, 2008, p. 50.
+    \bibitem{Aero} J. J. Bertin and R. M. Cummings, Aerodynamics for Engineers. Cambridge University Press, 2022.
+    \bibitem{PitotLecture} Abbitt, J. D., ``HotWire-measurements,'' \textit{University of Florida E-Learning} [PowerPoint slides], URL: \url{https://ufl.instructure.com/courses/480244/files/77543976}, 2023.
+    \bibitem{errorprop} Harry Ku (1966). Notes on the Use of Propagation of Error Formulas, J Research of National Bureau of Standards-C. Engineering and Instrumentation, Vol. 70C, No.4, pp. 263--273.
+    \bibitem{transducer} MKS Baratron Type 223B Pressure Transducer User Manual, MKS Instruments, Inc., Anodver, MA, 1996.
+    \bibitem{HeatTransfer} Bergman, T. L., and Lavine, A. S., ``Internal Flow,'' \textit{Fundamentals of Heat and Mass Transfer}, Wiley, New Jersey, 2017, p. 471.
+    \bibitem{KViscosity} Bergman, T. L., and Lavine, A. S., ``Appendix A: Thermophysical Properties of Matter,'' \textit{Fundamentals of Heat and Mass Transfer}, Wiley, New Jersey, 2017, p. 911.
 \end{thebibliography}
 
 \end{document}

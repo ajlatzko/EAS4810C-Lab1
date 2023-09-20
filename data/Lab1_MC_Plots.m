@@ -196,7 +196,6 @@ xlabel('P_{amb} - P_{ts} (inH_2O)')
 ylabel('q_{ts} (inH_2O)')
 grid on;
 box off;
-set(gca,'fontname','times');
 matlab2tikz('dataPlot.tex','height','\fheight','width','\fwidth')
 
 %% Plot transducer calibration curve
@@ -269,3 +268,59 @@ xlim([0,25])
 grid on;
 box off;
 matlab2tikz('vProfile.tex','height','\fheight','width','\fwidth')
+
+%% Plot velocity vs fan speed
+
+clc; clear; close all;
+
+fan =  [10
+        12.5
+        15
+        17.5
+        20
+        22.5
+        25
+        27.5
+        30
+        32.5
+        35
+        37.5
+        40
+        42.5
+        45
+        47.5
+        50];
+
+spd =  [6.86
+        8.67
+        10.56
+        12.54
+        14.54
+        16.60
+        18.68
+        20.77
+        22.94
+        25.08
+        27.27
+        29.44
+        31.62
+        33.79
+        35.98
+        38.14
+        40.28];
+    
+coeff = polyfit(fan,spd,1);
+trend = polyval(coeff,fan);
+    
+figure;
+c = '#A6A6A6';
+hold on;
+plot(fan,spd,'k.','MarkerSize',20);
+plot(fan,trend,'Color',c,'LineWidth',2.5);
+xlabel('Fan Setting (Hz)')
+xlim([0,50])
+ylabel('Flow Speed (m/s)')
+ylim([0,45])
+grid on;
+box off;
+matlab2tikz('fanVsSpd.tex','height','\fheight','width','\fwidth')

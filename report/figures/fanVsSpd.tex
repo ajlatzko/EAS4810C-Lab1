@@ -1,0 +1,71 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.65098,0.65098,0.65098}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.958\fwidth,
+height=\fheight,
+at={(0\fwidth,0\fheight)},
+xmin=0,
+xmax=50,
+xlabel style={font=\color{white!15!black}},
+xlabel={Fan Setting (\unit{\hertz})},
+ymin=0,
+ymax=45,
+ylabel style={font=\color{white!15!black}},
+ylabel={Flow Speed (\unit{\m\per\s})},
+ytick={0,5,...,45},
+axis background/.style={fill=white},
+axis x line*=bottom,
+axis y line*=left,
+xmajorgrids,
+ymajorgrids
+]
+\addplot [color=black, only marks, mark size=2.5pt, mark=*, mark options={solid, black}, forget plot]
+  table[row sep=crcr]{%
+10	6.86\\
+12.5	8.67\\
+15	10.56\\
+17.5	12.54\\
+20	14.54\\
+22.5	16.6\\
+25	18.68\\
+27.5	20.77\\
+30	22.94\\
+32.5	25.08\\
+35	27.27\\
+37.5	29.44\\
+40	31.62\\
+42.5	33.79\\
+45	35.98\\
+47.5	38.14\\
+50	40.28\\
+};
+\addplot [color=mycolor1, line width=2.5pt, forget plot]
+  table[row sep=crcr]{%
+10	6.28490196078432\\
+12.5	8.39458333333334\\
+15	10.5042647058824\\
+17.5	12.6139460784314\\
+20	14.7236274509804\\
+22.5	16.8333088235294\\
+25	18.9429901960784\\
+27.5	21.0526715686275\\
+30	23.1623529411765\\
+32.5	25.2720343137255\\
+35	27.3817156862745\\
+37.5	29.4913970588235\\
+40	31.6010784313725\\
+42.5	33.7107598039216\\
+45	35.8204411764706\\
+47.5	37.9301225490196\\
+50	40.0398039215686\\
+};
+\end{axis}
+\end{tikzpicture}%
